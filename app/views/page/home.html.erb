@@ -1,0 +1,334 @@
+<% provide(:page_title, 'Home') %>
+
+<div class="main-wrap left relative">
+  <div class="container">
+    <div class="feat-wrap relative left">
+
+      <section class="feat2-wrap relative left">
+
+        <% @posts.first(1).each do |post| %>
+        <div class="feat2-wrap-main left relative">
+          <%= link_to post do %>
+            <div class="feat2-wrap-main-img left relative">
+              <img src="<%= post.banner_image_url %>">
+            </div>
+            <div class="feat2-wrap-main-text">
+              <h3 class="feat2-wrap-main-cat left">
+                <span><% post.categories.each do |cat| %>
+                              <%= cat.name  %><% end %></span>
+              </h3>
+             <div class="feat2-wrap-main-title relative left">
+               <h2><%= post.title %></h2>
+             </div> 
+             <div class="feat2-wrap-main-info">
+               <span class="blog-author">By Health-Inn Staff</span>
+               <span class="blog-date"><i class="far fa-clock"></i></span>
+               <span class="blog-time">May 17, 2018</span>
+             </div>
+            </div>
+          <% end %>
+          
+        </div>
+       <% end %> 
+
+       <% @posts.drop(1).first(2).each do |p| %>
+        <div class="feat2-wrap-sub left relative">
+          <%= link_to p do %>
+            <div class="feat2-wrap-sub-img left relative">
+              <img width="400" height="200" src="<%= p.banner_image_url %>">
+            </div>
+          </a>
+          <div class="feat2-wrap-sub-text-before left relative">
+            <div class="feat2-wrap-sub-text">
+              <h3 class="feat2-wrap-sub-cat">
+                <span><% p.categories.each do |cat| %>
+                              <%= cat.name  %><% end %></span>
+              </h3>
+
+             <a href="">
+               <h2><%= p.title %></h2>
+             </a> 
+             <div class="feat2-wrap-sub-info">
+               <span class="blog-author">By <a href=""> Health-Inn Staff </a></span>
+               <span class="blog-date">
+                <i class="far fa-clock"></i>
+                
+               </span>
+               <span class="blog-time">May 17, 2018</span>
+             </div>
+          </div>   
+        </div>
+          <% end %>
+          
+        </div>
+      <% end %>
+         
+        </div> 
+      </div>
+
+
+      </section>
+    </div>
+
+   <div class="body-wrap left relative">
+    <div class="content-side-out relative" style="transform: none;">
+     <div class="content-side-in"> 
+        <div class="leftcolumn left relative">
+
+
+         <div id="home-head-toggle" class="left relative">
+            <ul class="home-head-toggle-list col-tabs">
+              <li class="feat-col-tab1 active">
+                <a href="" data-rel="tab-col1"><i class="fa fa-clock-o" aria-hidden="true"></i><span class="home-head-toggle-item">All</span></a>
+              </li>
+              <li>
+                <a href="" data-rel="tab-col2"><i class="far fa-clock"></i><span class="home-head-toggle-item">Latest</span></a>
+              </li>
+                          <li>
+                <a href="" ><i class="fas fa-chart-line"></i><span class="home-head-toggle-item"  >Trending</span></a>
+              </li>
+                                      <li>
+                <a href=""><i class="fas fa-star"></i><span class="home-head-toggle-item">Popular</span></a>
+              </li>
+                        </ul>
+          </div>
+
+
+           <section id="tab-col1" class="main-blog-wrap left relative" style="display: none;">
+             <ul class="main-blog-list left relative">
+              <li>
+                <div class="main-blog-out relative" style="border-top: 1px solid #ddd;">
+                  <a href="">
+                    <div class="main-blog-img left relative">
+                      <img width="400" height="240" src="http://celebmafia.com/wp-content/uploads/2013/10/hayley-williams-launches-2013-pinktober-campaign-at-hard-rock-cafe-in-hollywood_5.jpg">
+                    </div>
+                  </a>
+                
+                  <div class="main-blog-in">
+                    <div class="main-blog-text left relative">
+                      <h3 class="main-blog-cat left">
+                        <span>Culture</span>
+                      </h3>
+                      <a href="">
+                        <h2>People Are Relating To This Hilarious Mom-Daughter Conversation About Their Cat</h2>
+                      </a>
+                      <div class="feat2-wrap-sub-info">
+                         <span class="blog-author"> By <a href="">Health-Inn Staff</a></span>
+                         <span class="blog-date"><i class="far fa-clock"></i></span>
+                         <span class="blog-time">May 17, 2018</span>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                      </p>  
+                      <div class="story-share-wrap">
+                              <span class="story-share-but fa fa-share fa-2"></span>
+                              <div class="story-share-cont">
+                                <a href="#" title="Share on Facebook"><span class="story-share-fb fab fa-facebook-f"></span></a>
+                                <a href="#" title="Tweet This Post"><span class="story-share-twit fab fa-twitter"></span></a>
+                                <a href="#" title="Pin This Post"><span class="story-share-pin fab fa-pinterest-p"></span></a>
+                              </div>
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+              </li>
+
+              <li>
+                <div class="main-blog-out relative">
+                  <a href="">
+                    <div class="main-blog-img left relative">
+                      <img width="400" height="240" src="https://images3.alphacoders.com/851/thumb-1920-85149.jpg">
+                    </div>
+                  </a>
+                
+                  <div class="main-blog-in">
+                    <div class="main-blog-text left relative">
+                      <h3 class="main-blog-cat left">
+                        <span>Culture</span>
+                      </h3>
+                      <a href="">
+                        <h2>People Are Relating To This Hilarious Mom-Daughter Conversation About Their Cat</h2>
+                      </a>
+                      <div class="feat2-wrap-sub-info">
+                         <span class="blog-author"> By <a href="">Health-Inn Staff</a></span>
+                         <span class="blog-date"><i class="far fa-clock"></i></span>
+                         <span class="blog-time">May 17, 2018</span>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                      </p>  
+                      <div class="story-share-wrap">
+                              <span class="story-share-but fa fa-share fa-2"></span>
+                              <div class="story-share-cont">
+                                <a href="#" title="Share on Facebook"><span class="story-share-fb fab fa-facebook-f"></span></a>
+                                <a href="#" title="Tweet This Post"><span class="story-share-twit fab fa-twitter"></span></a>
+                                <a href="#" title="Pin This Post"><span class="story-share-pin fab fa-pinterest-p"></span></a>
+                              </div>
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+              </li>
+
+
+
+              <li>
+               <% @posts.first(3).each do |p| %>
+                <div class="main-blog-out relative" style="border-top: 1px solid #ddd;">
+                  <%= link_to p do %>
+                    <div class="main-blog-img left relative">
+                      <img width="400" height="240" src="<%= p.banner_image_url %>">
+                    </div>
+                  <% end %>
+                
+                  <div class="main-blog-in">
+                    <div class="main-blog-text left relative">
+                      <h3 class="main-blog-cat left">
+                        <span><% p.categories.each do |cat| %>
+                              <%= cat.name  %><% end %></span>
+                      </h3>
+                      <%= link_to p do %>
+                        <h2><%= p.title %></h2>
+                      <% end %>
+                      <div class="feat2-wrap-sub-info">
+                         <span class="blog-author"> By <a href="">Health-Inn Staff</a></span>
+                         <span class="blog-date"><i class="far fa-clock"></i></span>
+                         <span class="blog-time"><%= p.display_day_published %></span>
+                      </div>
+                      <p>
+                        <%= truncate(p.description, length: 160) %>
+                      </p>  
+                      <div class="story-share-wrap">
+                              <span class="story-share-but fa fa-share fa-2"></span>
+                              <div class="story-share-cont">
+                                <a href="#" title="Share on Facebook"><span class="story-share-fb fab fa-facebook-f"></span></a>
+                                <a href="#" title="Tweet This Post"><span class="story-share-twit fab fa-twitter"></span></a>
+                                <a href="#" title="Pin This Post"><span class="story-share-pin fab fa-pinterest-p"></span></a>
+                              </div>
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+               <% end %>
+              </li>
+               
+             </ul>
+           </section>
+
+
+           <section id="tab-col2" class="main-blog-wrap left relative" style="display: block;">
+             <ul class="main-blog-list left relative">
+              <li>
+               <% @posts.each do |p| %>
+                <div class="main-blog-out relative" style="border-top: 1px solid #ddd;">
+                  <%= link_to p do %>
+                    <div class="main-blog-img left relative">
+                      <img width="400" height="240" src="<%= p.banner_image_url %>">
+                    </div>
+                  <% end %>
+                
+                  <div class="main-blog-in">
+                    <div class="main-blog-text left relative">
+                      <h3 class="main-blog-cat left">
+                        <span><% p.categories.each do |cat| %>
+                              <%= cat.name  %><% end %></span>
+                      </h3>
+                      <%= link_to p do %>
+                        <h2><%= p.title %></h2>
+                      <% end %>
+                      <div class="feat2-wrap-sub-info">
+                         <span class="blog-author"> By <a href="">Health-Inn Staff</a></span>
+                         <span class="blog-date"><i class="far fa-clock"></i></span>
+                         <span class="blog-time"><%= p.display_day_published %></span>
+                      </div>
+                      <p>
+                        <%= truncate(p.description, length: 160) %>
+                      </p>  
+                      <div class="story-share-wrap">
+                              <span class="story-share-but fa fa-share fa-2"></span>
+                              <div class="story-share-cont">
+                                <a href="#" title="Share on Facebook"><span class="story-share-fb fab fa-facebook-f"></span></a>
+                                <a href="#" title="Tweet This Post"><span class="story-share-twit fab fa-twitter"></span></a>
+                                <a href="#" title="Pin This Post"><span class="story-share-pin fab fa-pinterest-p"></span></a>
+                              </div>
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+               <% end %>
+              </li>
+              
+              
+
+
+
+               
+             </ul>
+             <a href="" class="more-but">More Posts</a>
+           </section>
+         </div> 
+        </div>  
+        <div class="rightcolumn sticky relative">
+          <h4 class="side-head-widget left">Latest News</h4>
+         <% @posts.drop(3).first(1).each do |p| %> 
+         <div class="wide-widget-wrap left relative">
+          <div classs="wide-widget-story">
+            <%= link_to p do %>
+              <div class="wide-widget-img left relative">
+                <img width="400" height="240" src="<%= p.banner_image_url %>">
+              </div>
+            <% end %>
+            <div class="wide-widget-text left relative">
+              <h3 class="feat2-widget-sub-cat left">
+                <span class="feat2-widget-sub-cat left"><% p.categories.each do |cat| %>
+                              <%= cat.name  %><% end %></span>
+              </h3>
+              <%= link_to p do %>
+                <h2><%= p.title %></h2>
+              <% end %>
+              <div class="feat2-wrap-sub-info">
+               <span class="blog-author"> By <a href="">Health-Inn Staff</a></span>
+               <span class="blog-date"><i class="far fa-clock"></i></span>
+               <span class="blog-time"><%= p.display_day_published %></span>
+             </div>
+            </div>
+          </div>
+           
+         </div> 
+         <% end %>
+
+         <div class="socials left relative">
+            <h2 class="heading">
+              <span>Follow Us And get latest news</span>
+            </h2>
+            <a class="social-facebook " href=""><i class="fab fa-facebook-f"></i>
+              
+              <span class="social-text likes">Follow us on <strong>Facebook</strong></span>
+            </a>
+            <a class="social-twitter" href=""><i class="fab fa-twitter"></i>
+              
+              <span class="social-text followers">Follow us on <strong>Twitter</strong></span>
+            </a>
+            <a class="social-youtube" href=""
+            ><i class="fab fa-pinterest-p"></i>
+              
+              <span class="social-text subscribers">Follow us on <strong>pinterest</strong></span>
+            </a>
+            <div class="clear"></div>
+        </div>
+
+          
+         
+   </div>   
+  </div>
+
+  <script type="text/javascript">
+     
+  </script>
+
+  </div>
+ </div> 
+ <div class='clear'></div>
+  
+  
+</div>

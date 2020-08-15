@@ -1,0 +1,184 @@
+<% provide(:page_title, 'Home') %>
+
+<div class="header-wrap-space"></div>
+<div class="mt-container-wrap" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+  <div class="container mt-content-container">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="pl-270">
+          <div class="panel-grid" id="pg-270-0">
+            <div class="panel-grid-cell" id="pgc-270-0-0">
+              <div class="so-panel widget widget_space_widget panel-first-child" id="panel-270-0-0-0" data-index="0">
+                <div class="clearfix" style="height:10px"></div>
+              </div>
+              <div class="so-panel widget widget_grid_widget" id="panel-270-0-0-1" data-index="1">
+                <div>
+                  <% @posts.first(1).each do |post| %>
+                      <div class="grid-post mt-radius nr-1 style-1 ">
+                        <%= link_to post do %>
+                            <div class="wrap">
+                              <div class="mt-post-image">
+                                <div class="mt-post-image-background" style="background-image:url(<%= post.banner_image_url %>);"></div>
+                                <img  class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="<%= post.banner_image_url %>" width="1000" height="1000" />
+                              </div>
+                            </div>
+                            <div class="layouts">
+                              <div class="poster-cat"><span class="mt-theme-background"><% post.categories.each do |cat| %>
+                              <%= cat.name  %><% end %></span>
+                              </div>
+                              <h2><%= post.title %></h2>
+                              <div class="post-info"><span class="poster-shares">192 shares</span><span class="poster-views">1,929 views</span>
+                              </div>
+                            </div>
+                        <% end %>
+                        <div class="clearfix"></div>
+                      </div>
+                  <% end %>
+
+
+                  <% @posts.drop(1).first(1).each do |p| %>
+                      <div class="grid-post mt-radius nr-2 style-1 ">
+                        <%= link_to p do %>
+                            <div class="wrap">
+                              <div class="mt-post-image">
+                                <div class="mt-post-image-background" style="background-image:url(<%= p.image %>) ;"></div><img class="lazy" src="<%= p.image %>" width="1000" height="1000" />
+                              </div>
+                            </div>
+                            <div class="layouts">
+                              <div class="poster-cat"><span class="mt-theme-background"><% p.categories.each do |cat| %>
+                              <%= cat.name  %><% end %></span>
+                              </div>
+                              <h2><%= p.title %></h2>
+                              <div class="post-info"><span class="poster-shares"></span><span class="poster-views"></span>
+                              </div>
+                            </div>
+                        <% end %>
+                        <div class="clearfix"></div>
+                      </div>
+                  <% end %>
+
+                  <% @posts.drop(2).first(2).each do |post| %>
+                      <div class="grid-post mt-radius nr-3 style-1 ">
+                        <%= link_to post do %>
+                            <div class="wrap">
+                              <div class="mt-post-image">
+                                <div class="mt-post-image-background" style="background-image:url(<%= post.banner_image_url %>);"></div><img class="lazy" src="<%= post.banner_image_url %>" width="1000" height="1000" />
+                              </div>
+                            </div>
+                            <div class="layouts">
+                              <div class="poster-cat"><span class="mt-theme-background"><% post.categories.each do |cat| %>
+                              <%= cat.name  %><% end %></span>
+                              </div>
+                              <h2><%= post.title %></h2>
+                              <div class="post-info"><span class="poster-shares"></span><span class="poster-views"></span>
+                              </div>
+                            </div>
+                        <% end %>
+                        <div class="clearfix"></div>
+                      </div>
+                  <% end %>
+                </div>
+              </div>
+              <div class="so-panel widget widget_space_widget" id="panel-270-0-0-2" data-index="2">
+                <div class="clearfix" style="height:40px"></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-grid" id="pg-270-1">
+            <div class="panel-grid-cell" id="pgc-270-1-0">
+              <div class="so-panel widget widget_posts_tabs_widget panel-first-child panel-last-child" id="panel-270-1-0-0" data-index="4">
+                <div class="mt-tab-wrap">
+                  <div class="mt-post-tabs">
+                    <h2 class="heading heading-left pull-left"><span>Recent Posts</span></h2>
+
+                  </div>
+                  <div class="clearfix"></div>
+                  <div class="mt-tab mt-tab-1 show">
+
+                    <div id="ajax-posts_1">
+
+
+
+                      <% @posts.each do |post| %>
+                          <div class="poster normal size-350">
+
+                            <%= link_to post,  class: "poster-image mt-radius pull-left" do %><span class="post-icon mt-theme-background"><i class="ic-open open"></i></span><div class="mt-post-image" ><div class="mt-post-image-background" style="background-image:url(<%= post.banner_image_url %>);"></div><img alt="" class="lazy" src="<%= post.banner_image_url %>"  width="430" height="240" /></div><div class="poster-info"><div class="poster-cat"><span class="mt-theme-text">Travel</span></div><div class="poster-data color-silver-light"><span class="poster-shares">579 shares</span><span class="poster-views">13,995 views</span></div></div><% end %>
+                            <div class="poster-content">
+                              <div class="poster-cat"><span class="mt-theme-text"><% post.categories.each do |cat| %>
+                              <%= cat.name  %><% end %></span>
+                              </div>
+                             <!-- <div class="poster-data color-silver-light"><span class="poster-shares">579 shares</span><span class="poster-views">13,995 views</span>
+                              </div> -->
+                              <%= link_to post do %>
+                                <div>
+                                  <h2><%= post.title %></h2>
+                                </div>
+                              <% end %><small class="mt-pl"><strong class="mt-pl-a">Health-Inn</strong><span class="color-silver-light mt-ml"> - </span><span class="color-silver-light mt-pl-d"><%= post.display_day_published %></span></small>
+                              <p><%= truncate(post.description, length: 160) %></p>
+                              <div class="hidden mt-readmore"><%= link_to post, class: "mt-readmore-url" do %>View Post<% end %>
+                              </div>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div><% end %>
+
+                    </div>
+                    <div data-type="all" data-tag="" data-author="" data-category="" data-ppp="10" data-orderby="date" data-orderbyp="off" data-orderbyh="off" data-orderbyt="off" class="mt-load-more mt-radius"><span class="on">Load More Posts</span><span class="off">Congratulations, you&#039;ve reached all posts.</span>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="panel-grid-cell" id="pgc-270-1-1">
+              <div class="so-panel widget widget_posts_widget panel-first-child" id="panel-270-1-1-0" data-index="5">
+                <h2 class="heading"><span>Latest News</span></h2>
+                <div>
+                  <% @posts.first(1).each do |post| %>
+                      <div class="poster size-normal size-350">
+                        <%= link_to post, class: "poster-image mt-radius" do %>
+                            <div class="mt-post-image">
+                              <div class="mt-post-image-background" style="background-image:url(<%= post.banner_image_url %>);"></div><img class="lazy" src="<%= post.banner_image_url %>"  />
+                            </div><i class="ic-open open"></i>
+                            <div class="poster-info mt-theme-background">
+                              <div class="poster-cat "><span class="mt-theme-text"><% post.categories.each do |cat| %>
+                              <%= cat.name  %><% end %></span>
+                              </div>
+                             <!-- <div class="poster-data color-silver-light"><span class="poster-shares">365 shares</span><span class="poster-views">10,039 views</span>
+                              </div> -->
+                            </div>
+                        <% end %>
+                        <div class="poster-content-wrap">
+                          <!-- <div class="poster-data color-silver-light"><span class="poster-shares">365 shares</span><span class="poster-views">10,039 views</span>
+                          </div>--><%= link_to post do %><h2><%= post.title %></h2><% end %><small class="mt-pl"><strong class="mt-pl-a">Health-Inn</strong><span class="color-silver-light mt-ml"> - </span><span class="color-silver-light mt-pl-d"><%= post.display_day_published %></span></small>
+                        </div>
+                      </div>
+                      </div>
+                      </div>
+                  <% end %>
+                  <div class="so-panel widget widget_social_widget panel-last-child" id="panel-270-1-1-2" data-index="7">
+                    <div class="socials">
+                      <h2 class="heading"><span>Follow Us And get latest news</span></h2><a target="_blank" href="https://www.facebook.com/envato" class="social-facebook mt-radius"><span class="social-count"></span><span class="social-text">Follow us on <strong>Facebook</strong></span></a><a target="_blank" href="https://twitter.com/envato" class="social-twitter mt-radius"><span class="social-count"></span><span class="social-text">Follow us on <strong>Twitter</strong></span></a><a target="_blank" href="https://www.instagram.com/hussyn12" class="social-pinterest mt-radius"><span class="social-count"></span><span class="social-text">Follow us on <strong>Pinterest</strong></span></a>
+                      <div class="clear"></div>
+                    </div>
+                  </div>
+                  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

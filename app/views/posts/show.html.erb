@@ -1,0 +1,216 @@
+<% provide(:page_title, @post.title) %>
+
+
+<meta property="og:url"           content="<%= post_url(@post) %>" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="<%= @post.title %> " />
+<meta property="og:description"   content="<%= @post.description %>" />
+<meta property="og:image"         content="<%= @post.banner_image_url %>" />
+
+<article itemscope="" itemtype="http://schema.org/Article" style="transform: none; margin-top: 30px;">
+  <div class="wrapper">
+    <div class="page-layout">
+      <div class="container">
+        <div class="content left">
+          <div class="single-blog">
+            <article class="post-item">
+              <div class="post-container">
+                <div class="post-thumb">
+                  <img width="1200" height="675" src="<%= @post.banner_image_url %>">
+                </div>
+
+                <h1><%=@post.title %></h1>
+
+                <div class="post-meta">
+                  <div class="post-meta-one left">
+                    <span class="post-meta-author">by Health Inn</span>
+                    <span class="post-meta-date"><%= @post.display_day_published %></span>
+                  </div>
+
+                  <div class="post-meta-two">
+                    <span class="post-categories"><% @post.categories.each do |cat| %>
+                              <%= cat.name  %>
+                    <% end %></span>
+                    <span class="post-meta-view"><i class="fas fa-eye"></i><%= @post.impressionist_count %></span>
+
+                  </div> 
+
+                </div>
+
+                <div class="post-content">
+
+                  <p> <%= raw @post.content %> </p>
+                </div>
+
+              </div>
+            </article>
+
+            <div class="sh-clear"></div>
+
+            <div class="blog-tags">
+              <h5>Tags In</h5>
+              
+              <div class="tags-list">
+                <% @post.tags.each do |t| %>
+                <a href="">
+                              <%= t.name  %></a>
+                     <% end %>         
+              </div>
+            </div>
+
+            <div class="blog-single-meta">
+              <div class="previous left">
+                <%= link_to @post.previous_post  do %> <span class="color-silver-light">Previous article</span><div> <i class="fas fa-arrow-left"></i> <%= @post.previous_post.title  %> </div><% end %>
+              </div>
+
+              <div class="next">
+                <%= link_to @post.next_post  do %> <span class="color-silver-light">Next article</span>
+                    <div><%= @post.next_post.title %> <i class="fas fa-arrow-right"></i> </div>
+                  <% end %>
+              </div>
+
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="related-posts">
+              <div class="related-posts-title">
+                <h3>Related Posts</h3>
+              </div>
+             
+              <ul class="blog-list">
+                <% @posts.first(3).each do |post| %>
+                <li class="related-post-item">
+                  <div class="post-cont">
+                    <div class="post-meta-thumb">
+                      <img width="660" height="174" src="<%= post.banner_image_url %>">
+                    </div>
+                    <%= link_to post do %>
+                     <h2><%= post.title %></h2>
+                    <% end %>
+                    <div class="related-post-meta-two">
+                      <span class="post-meta-cat left">
+                        <i class="fas fa-tag"></i>
+                      </span>
+
+                      <a href="" class="tag-name"> <%= post.tag_rel %>
+                              </a>
+                      <span class="post-meta-view">
+                        <i class="fas fa-eye"></i>
+                        <%= post.impressionist_count %>
+                      </span>        
+                    </div>
+                  </div>
+                </li>
+                <% end %>
+              </ul>
+              
+            </div>
+
+            <div class="sh-comments">
+
+            <div class="sh-comment-form">
+                <div id="respond" class="comment-respond">
+                    <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog1/2016/11/23/trip-that-youll-never-forget/#respond" style="display:none;">Cancel reply</a></small></h3>
+                    <form action="https://jevelin.shufflehound.com/blog1/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+                        <label>Message <i class="far fa-check-circle"></i></label>
+                        <p class="comment-form-comment">
+                            <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required=""></textarea>
+                        </p>
+                        <label>Name <i class="far fa-check-circle"></i></label>
+                        <p class="comment-form-author">
+                            <input id="author" name="author" type="text" value="" required="">
+                        </p>
+                        <label>Email <i class="far fa-check-circle"></i></label>
+                        <p class="comment-form-email">
+                            <input id="email" name="email" type="text" value="" required="">
+                        </p>
+                        <label>Website <i class="far fa-check-circle"></i></label>
+                        <p class="comment-form-url">
+                            <input id="url" name="url" type="text" value="">
+                        </p>
+                        <div class="sh-comments-required-notice">Required fields are marked <i class="far fa-check-circle"></i></div>
+                        <p class="form-submit">
+                            <input name="submit" type="submit" id="submit" class="submit" value="Send a comment">
+                            <input type="hidden" name="comment_post_ID" value="93" id="comment_post_ID">
+                            <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                        </p>
+                    </form>
+                </div>
+                <!-- #respond -->
+                    </div>
+                </div>
+
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <div class="recent-posts1">
+            <div class="wrap-recent-posts">
+              <h3 class="sidebar-widget-title">Latest posts</h3>
+              
+              <div class="sidebar-recent-post-widgets relative">
+                <% @posts.first(4).each do |post| %>
+                <div class="sidebar-recent-post-widgets-item">
+                  <div class="sidebar-recent-post-widgets-item-thumb">
+                    <%= link_to post do %>
+                     <div class="ratio relative">
+                       <div class="ratio-container">
+                         <div class="ratio-content" style="background-image: url('<%= post.banner_image_url %>');"></div>
+                       </div>
+                     </div>
+                    <% end %> 
+                  </div>
+                  
+                  <div class="sidebar-recent-post-widgets-item-content">
+                    <span class="post-categories">
+                      <% post.categories.each do |cat| %>
+                              <%= cat.name  %>
+                      <% end %>
+                    </span>
+                    <%= link_to post do %>
+                     <h6><%= post.title %></h6>
+                    <% end %> 
+                  </div>
+
+                </div>
+               <% end %> 
+              </div>
+            </div>
+          </div>
+
+           <div class="widget-ad">
+             <img src="https://images.unsplash.com/photo-1542092228-c704ece29fe7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c35bb77f08c3963f2c463e67e6d3b84a&auto=format&fit=crop&w=1575&q=80" height= "450px">
+             <div class="widget-ad-text"><h2>Advertisment</h2></div>
+           </div>
+
+           <div class="widget-search">
+             <form class="search-form">
+               <div>
+                 <label>
+                   <input type="search" class="search-field" placeholder="Search here..." name="s">
+                 </label>
+                 <button type="submit" class="search-submit">
+                   <i class="fas fa-search"></i>
+                 </button>
+               </div>
+             </form>
+           </div>
+
+           <div class="widget-tagcloud">
+             <h3 class="sidebar-widget-title">Popular tags</h3>
+
+             <div class="tags-list">
+               <% @tags.each do |t| %>
+                <a href="">
+                              <%= t.name  %></a>
+                     <% end %> 
+             </div>
+           </div> 
+
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</article>

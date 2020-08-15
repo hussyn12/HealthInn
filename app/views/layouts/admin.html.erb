@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:page_title) %> | Health-Inn</title>
+  <%= stylesheet_link_tag    '', '', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="/assets/fonts/Webfont/simple-line-icons.css" rel="stylesheet">
+
+	
+</head>
+
+<body>
+ <% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+ <% end %>
+
+ <% if flash[:alert] %>
+  <div class="alert"><%= flash[:alert] %></div>
+ <% end %>
+
+ 
+
+<%= render "admin/dashboard/sidebar" %>
+<%= yield %>
+</body>
+<style type="text/css">
+
+  @font-face {
+  font-family: Muli-Regular;
+  src: url('/assets/fonts/fonts/muli2.ttf'); 
+}
+
+  html{
+    font-family:sans-serif;
+    line-height:1.15;
+    -webkit-text-size-adjust:100%;
+    -webkit-tap-highlight-color:transparent
+}
+article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{
+    display:block
+}
+
+body{
+    margin:0;
+   /* font-family: */
+    font-size:14px;
+    font-weight:400;
+    line-height:1.5;
+    color:#575757;
+    text-align:left;
+    background-color:#f0f2f5;
+    font-family: 'Muli-Regular',-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+.container {
+    background: none;
+    overflow: none;
+    display: block;
+    z-index: 1;
+} 
+#sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 230px;
+    box-shadow: 5px 0 10px #e4e7ed;
+    background-color: #fff;
+}
+.sidebar-content {
+  width: 100%;
+  box-sizing: border-box;
+}
+.sidebar-header {
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  display: flex;
+  padding-right: 15px!important;
+  padding-left: 15px!important;
+  margin: 0 auto;
+  padding: 17px 18px;
+}
+.text-center {
+  text-align: center!important;
+}
+.sidebar-header-item {
+  display: inline-block;
+  height: 34px;
+  line-height: 34px;
+  vertical-align: middle;
+
+}
+.font-w700 {
+  font-weight: 700!important;
+}
+.anim {
+  color: #343a40;
+  font-size: 20px;
+  box-sizing: border-box;
+
+}
+.anim2 {
+  font-size: 20px;
+  box-sizing: border-box;
+
+}
+.text-primary {
+    color: #3f9ce8!important;
+}
+
+.relative {
+  position: relative;
+}
+a {
+  color: #3f9ce8;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #1568ac;
+  text-decoration: none;
+}
+
+a.link-effect {
+  position: relative;
+}
+
+a.link-effect::before {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  content: '';
+  background-color: #3f9ce8;
+  visibility: hidden;
+  -webkit-transform: translateY(6px);
+  transform: translateY(6px);
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  opacity: 0;
+  transition: opacity .12s ease-out,-webkit-transform .12s ease-out;
+  transition: transform .12s ease-out,opacity .12s ease-out;
+  transition: transform .12s ease-out,opacity .12s ease-out,-webkit-transform .12s ease-out;
+}
+
+a:hover.link-effect::before {
+  visibility: visible;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+}
+
+a.primary-dark.link-effect::before {
+    background-color: #343a40;
+}
+
+.si {
+  font-size: 14px;
+}
+
+.sidebar-user {
+  padding-bottom: 18px;
+  height: 136px;
+  background-color: #f6f7f9;
+}
+
+.img-link {
+  display: inline-block;
+  transition: opacity .25s ease-out,-webkit-transform .25s ease-out;
+  transition: transform .25s ease-out,opacity .25s ease-out;
+  transition: transform .25s ease-out,opacity .25s ease-out,-webkit-transform .25s ease-out;
+}
+
+.img-link:hover {
+  -webkit-transform: scale(1.04);
+  transform: scale(1.04);
+  opacity: .75;
+}
+
+.img-avatar {
+  display: inline-block!important;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+} 
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.primary-dark {
+    color: #343a40!important;
+}
+
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+
+.mt-10, .my-10 {
+  margin-top: 10px!important;
+}
+
+.list-inline-item {
+  display: inline-block;
+}
+
+.list-inline-item:not(:last-child) {
+  margin-right: .5rem;
+}
+
+.user-name {
+  letter-spacing: .0625rem;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.sidebat-menu-full {
+  padding-bottom: 18px;
+}
+
+.content-side {
+  margin: 0 auto;
+  padding: 18px 18px 1px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.nav-main {
+  margin: 0 -18px;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-main a.active, .nav-main a:focus, .nav-main a:hover {
+  color: #000;
+}
+
+.nav-main a {
+  position: relative;
+  display: block;
+  padding: 9px 18px 9px 40px;
+  font-weight: 600;
+  color: rgba(87,87,87,.9);
+ 
+}
+
+.nav-main a>i {
+  position: absolute;
+  top: 49%;
+  right: auto;
+  left: 18px;
+  -webkit-transform: translateX(0) translateY(-50%);
+  transform: translateX(0) translateY(-50%);
+  font-size: 14px;
+  color: rgba(52,58,64,.75);
+}
+
+.nav-main a.active>i, .nav-main a:focus>i, .nav-main a:hover>i {
+  color: #3f9ce8;
+}
+
+.nav-main .nav-main-heading {
+  padding: 30px 18px 6px 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: .55;
+  font-size: 13px;
+}
+
+</style>
+</html>

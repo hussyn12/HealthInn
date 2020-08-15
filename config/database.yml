@@ -1,0 +1,17 @@
+development:
+ <<:
+        adapter: mysql2
+        encoding: utf8
+        database: healthi4_health-inn
+        username: healthi4_root
+        password: ZmH_A9072
+        host: 192.185.128.99
+        port: 3306
+      
+
+production:
+  <<:
+  database: healthi4_health-inn
+  url: mysql2://healthi4_root:ZmH_A9072@192.185.128.99:3306/healthi4_health-inn
+  username: healthi4_root
+  password: ZmH_A9072

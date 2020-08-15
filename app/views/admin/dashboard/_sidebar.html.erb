@@ -1,0 +1,90 @@
+<nav id="sidebar">
+	<div class="sidebar-content">
+		<div class="sidebar-header text-center">
+		  <div class="sidebar-header-item relative">
+		   <a class="link-effect font-w700" href="">
+		   <i class="si icon-fire text-primary"></i>	
+			<span class="anim">admin</span><!--
+  		--><span class="anim2 text text-primary">panel</span>
+		   </a> 	
+		  </div>
+		</div>
+		<div class="sidebar-user relative content-side">
+			<div class="sidebar-user-container text-center">
+			   <a class="img-link" href="">
+				<img class="img-avatar" src="/assets/img-avatar.jpg">
+			   </a>
+			   <ul class="list-inline mt-10">
+			   	<li class="list-inline-item"><a class="link-effect user-name relative primary-dark" href="">HUSSYN NAQVI</a></li>
+			   	<li class="list-inline-item"><a class="primary-dark relative link-effect" href=""><i class="icon-drop"></i></a></li>
+			   	<li class="list-inline-item"><a class="primary-dark relative link-effect" href=""><i class="icon-logout"></i></a></li>
+			   </ul>
+			</div>
+		</div>
+
+		<div class="sidebar-menu-full content-side">
+			<ul class="nav-main">
+				<li>
+					<%= link_to admin_dashboard_index_path, class: "nav-submenu" do %>
+						<i class="icon-cup" ></i>
+						<span class="sidebar-list-txt">Dashboard</span>
+					<% end %>
+				</li>
+				<li>
+					<%= link_to admin_moderators_path, class: "nav-submenu" do %>
+						<i class="icon-users"></i>
+						<span class="sidebar-list-txt">Moderators</span>
+					<% end %>
+				</li>
+				<li class="nav-main-heading">
+					<span class="sidebar-mini-hidden">User Interface</span>
+				</li>
+				<li>
+					<%= link_to admin_posts_path, class: "nav-submenu" do %>
+						<i class="icon-note"></i>
+						<span class="sidebar-list-txt">Posts</span>
+					<% end %>
+				</li>
+				<li>
+					<a class="nav-submenu" href="">
+						<i class="icon-puzzle"></i>
+						<span class="sidebar-list-txt">Blocks</span>
+					</a>
+				</li>
+				<li>
+					<%= link_to new_admin_category_path, class: "nav-submenu" do %>
+						<i class="icon-grid"></i>
+						<span class="sidebar-list-txt">Categories</span>
+					<% end %>
+				</li>
+				<li>
+					<%= link_to new_admin_setting_path, class: "nav-submenu" do %>
+						<i class="icon-settings"></i>
+						<span class="sidebar-list-txt">Settings</span>
+					<% end %>
+				</li>
+				<li class="nav-main-heading">
+					<span class="sidebar-mini-hidden">PAGES</span>
+				</li>
+				<li>
+					<a class="nav-submenu" href="">
+						<i class="icon-globe-alt"></i>
+						<span class="sidebar-list-txt">Generic</span>
+					</a>
+				</li>
+				<li>
+					<a class="nav-submenu" href="">
+						<i class="icon-lock"></i>
+						<span class="sidebar-list-txt">Authentication</span>
+					</a>
+				</li>
+				<li>
+					<a class="nav-submenu" href="">
+						<i class="icon-flag"></i>
+						<span class="sidebar-list-txt">Error</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

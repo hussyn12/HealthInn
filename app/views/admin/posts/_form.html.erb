@@ -1,0 +1,98 @@
+<p><%= render 'validation_errors', object: @post %></p>
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'textarea',
+      height: 500,
+      theme: "modern",
+      paste_data_images: true,
+      plugins: [
+          "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+          "searchreplace wordcount visualblocks visualchars code fullscreen",
+          "insertdatetime media nonbreaking save table contextmenu directionality",
+          "emoticons template paste textcolor colorpicker textpattern"
+      ],
+      toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+      toolbar2: "print preview media | forecolor backcolor emoticons",
+      image_advtab: true,
+      file_picker_callback: function(callback, value, meta) {
+          if (meta.filetype == 'image') {
+              $('#upload').trigger('click');
+              $('#upload').on('change', function() {
+                  var file = this.files[0];
+                  var reader = new FileReader();
+                  reader.onload = function(e) {
+                      callback(e.target.result, {
+                          alt: ''
+                      });
+                  };
+                  reader.readAsDataURL(file);
+              });
+          }
+      },
+      templates: [{
+          title: 'Test template 1',
+          content: 'Test 1'
+      }, {
+          title: 'Test template 2',
+          content: 'Test 2'
+      }]
+  });
+
+  </script>
+
+
+
+<%= form_for [:admin, @post], html: { multipart: true } do |f| %>
+ <p>
+  <%= f.label :title %><b>
+  <%= f.text_field :title %>
+ </p>
+ <p>
+ <div class="field">
+  <%= f.label :tag_list, "Tags (separated by commas)" %><br>
+  <%= f.text_field :tag_list %>
+</div>
+</p>
+<p>
+  <%= f.label :description %><b>
+  <%= f.text_field :description %>
+</p>
+<p>
+  <%= f.label :content %><b>
+   <div> 
+   <%= f.text_area :content %>
+  <input name="image" type="file" id="upload" class="hidden" onchange="">
+</div>
+</p>
+
+<p>
+  <%= f.label :slug %><b> 
+  <%= f.text_field :slug %>
+</p>
+    <p>
+      <%= f.label :banner_image_url %><b>
+      <%= f.text_field :banner_image_url %>
+    </p>
+<p>
+  <%= f.label :image %><b> 
+  <%= f.file_field :image %>
+</p>
+ <p>
+
+ <div class="field">
+    <%= f.label :status %>
+    <%= f.select :status, ["Draft", "Published", "Scheduled"], selected: status_for(@post) %>
+  </div>
+ </p> 
+  <div class="field published-field">
+    <%= f.label :published_at, "Publish At" %><br>
+    <%= f.datetime_select :published_at %>
+  </div>
+
+  <p> 
+    <%= f.label :Category %><br>
+  <%= f.select :category_ids, Category.all.collect {|c| [c.name, c.id] }, {prompt: 'Select category'}, multiple: :true %>
+ </p>
+
+
+ <p><%= f.submit %></p>
+<% end %>

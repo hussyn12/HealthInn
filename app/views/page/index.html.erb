@@ -1,0 +1,7 @@
+<% provide(:page_title, 'Home') %>
+
+<div class="row">
+	<% @posts.each do |post| %>
+	 <%= post.title %>
+	<% end %>
+</div>	

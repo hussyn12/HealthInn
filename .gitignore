@@ -1,0 +1,10 @@
+/. bundle
+
+
+/log/*
+!/log/.keep
+/tmp
+/test
+/db/seeds
+/config/database
+/trace.txt

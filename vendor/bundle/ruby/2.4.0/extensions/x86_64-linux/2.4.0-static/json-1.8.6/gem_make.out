@@ -1,0 +1,13 @@
+current directory: /home/deploy/health-inn/vendor/bundle/ruby/2.4.0/gems/json-1.8.6/ext/json
+/usr/local/bin/ruby -r ./siteconf20170129-3293-1bw5fhk.rb extconf.rb
+creating Makefile
+
+current directory: /home/deploy/health-inn/vendor/bundle/ruby/2.4.0/gems/json-1.8.6/ext/json
+make "DESTDIR=" clean
+
+current directory: /home/deploy/health-inn/vendor/bundle/ruby/2.4.0/gems/json-1.8.6/ext/json
+make "DESTDIR="
+make: Nothing to be done for 'all'.
+
+current directory: /home/deploy/health-inn/vendor/bundle/ruby/2.4.0/gems/json-1.8.6/ext/json
+make "DESTDIR=" install
